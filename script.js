@@ -8,17 +8,17 @@
 
     btn.addEventListener("click", () => {
         if (input.value === CORRECT_PIN) {
-            msg.textContent = "CORRECT. PAYMENT COMPLETE";
+            msg.textContent = "ВЕРНО. ОПЛАТА ЗАВЕРШЕНА";
             msg.style.color = "green";
             btn.disabled = true;
             input.disabled = true;
         } else {
             attempts--;
             if (attempts > 0) {
-                msg.textContent = `INCORRECT – ${3 - attempts + 1}/3 attempts used`;
+                msg.textContent = `НЕВЕРНО – ${3 - attempts + 1}/3 попыток осталось`;
                 msg.style.color = "red";
             } else {
-                msg.textContent = "INCORRECT – No attempts left";
+                msg.textContent = "НЕВЕРНО - карта заблокирована на 10 минут";
                 msg.style.color = "red";
                 btn.disabled = true;
                 input.disabled = true;
