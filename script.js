@@ -1,30 +1,22 @@
-(function() {
-    const CORRECT_PIN = "1234";
-    let attempts = 3;
+const correctPin = "1234";
+let attempts = 3;
 
-    const input = document.getElementById("pinInput");
-    const btn = document.getElementById("submitBtn");
-    const msg = document.getElementById("message");
+document.getElementById('submitBtn').addEventListener('click', () => {
+    const pin = document.getElementById('pinInput').value;
+    const message = document.getElementById('message');
 
-    btn.addEventListener("click", () => {
-        if (input.value === CORRECT_PIN) {
-            msg.textContent = "ВЕРНО. ОПЛАТА ЗАВЕРШЕНА";
-            msg.style.color = "green";
-            btn.disabled = true;
-            input.disabled = true;
+    if (pin === correctPin) {
+        message.textContent = "✅ CORRECT. PAYMENT COMPLETE!";
+        message.style.color = "green";
+    } else {
+        attempts--;
+        if (attempts > 0) {
+            message.textContent = `❌ INCORRECT. ${attempts}/3 попыток осталось`;
+            message.style.color = "red";
         } else {
-            attempts--;
-            if (attempts > 0) {
-                msg.textContent = `НЕВЕРНО – ${3 - attempts + 1}/3 попыток осталось`;
-                msg.style.color = "red";
-            } else {
-                msg.textContent = "НЕВЕРНО - карта заблокирована на 10 минут";
-                msg.style.color = "red";
-                btn.disabled = true;
-                input.disabled = true;
-            }
+            message.textContent = "🚫 Карта заблокирована.";
+            message.style.color = "darkred";
+            document.getElementById('submitBtn').disabled = true;
         }
-        input.value = "";
-        input.focus();
-    });
-})();
+    }
+});

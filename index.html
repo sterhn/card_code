@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карта Учёного</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КвантБанк PIN</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="credit-card">
-        <div class="card-chip"></div>
-        <div class="card-bank">КвантФинанс</div>
-        <div class="card-number">1234 5678 9012 3456</div>
-        <div class="card-expiry">VALID THRU 12/29</div>
-        <div class="card-holder">MR SCIENTIST</div>
-        <div class="card-logo">💳</div>
+  <div class="credit-card">
+    <div class="shine"></div>
+    <div class="card-header">
+      <img src="kvant-logo.png" alt="КвантБанк" class="bank-logo" />
+      <span class="bank-name">КВАНТБАНК</span>
     </div>
-
-    <div class="card-input">
-        <input id="pinInput" type="password" maxlength="4" placeholder="Ввести ПИН-КОД" />
-        <button id="submitBtn">Отправить</button>
-        <p id="message"></p>
+    <div class="chip"></div>
+    <div class="card-number">1234 5678 9012 3456</div>
+    <div class="card-bottom">
+      <div class="card-holder">MR SCIENTIST</div>
+      <div class="card-expiry">12/29</div>
     </div>
-
-    <script src="script.js"></script>
+    <div class="payment-logo"></div>
+  </div>
+  <div class="card-input">
+    <input id="pinInput" type="password" maxlength="4" placeholder="Введите PIN">
+    <button id="submitBtn">Отправить</button>
+    <p id="message"></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
