@@ -6,15 +6,15 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     const message = document.getElementById('message');
 
     if (pin === correctPin) {
-        message.textContent = "✅ CORRECT. PAYMENT COMPLETE!";
+        message.textContent = "✅ ВЕРНО. Оплата успешна";
         message.style.color = "green";
     } else {
         attempts--;
         if (attempts > 0) {
-            message.textContent = `❌ INCORRECT. ${attempts}/3 попыток осталось`;
+            message.textContent = `❌ НЕВЕРНО. ${attempts}/3 попыток осталось`;
             message.style.color = "red";
         } else {
-            message.textContent = "🚫 Карта заблокирована.";
+            message.textContent = "🚫 Карта заблокирована на 10 минут.";
             message.style.color = "darkred";
             document.getElementById('submitBtn').disabled = true;
         }
