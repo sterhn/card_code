@@ -1,4 +1,4 @@
-const correctPin = "1234";
+const correctPin = "455";
 let attempts = 3;
 
 document.getElementById('submitBtn').addEventListener('click', () => {
